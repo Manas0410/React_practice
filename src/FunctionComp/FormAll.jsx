@@ -4,7 +4,7 @@ const FormAll = () => {
   const [profile, setProfile] = useState({
     name: "",
     email: "",
-    passwaord: "",
+    password: "",
     city: "",
     gender: "",
     hobby: "",
@@ -26,8 +26,11 @@ const FormAll = () => {
       <input type="text" name="name" onChange={myChange} />
       <p>mail:{profile.email}</p>
       <input type="text" name="email" onChange={myChange} />
-      <p>pass:{profile.passwaord}</p>
-      <input type="password" name="pass" onChange={myChange} />
+      <p>pass:{profile.password}</p>
+      <input type="password" name="password" />
+      <button name="password" onClick={myChange}>
+        show pass
+      </button>
       <p>city:{profile.city}</p>
       <label for="cars">Choose a car:</label>
       <select name="city" onChange={myChange}>
@@ -43,11 +46,11 @@ const FormAll = () => {
       <label for="male">female</label>
       <p>hobby:{profile.hobby}</p>
       <input type="checkbox" name="hobby" value="cricket" onChange={myChange} />
-      <label for="vehicle1"> cricket</label>
+      <label> cricket</label>
       <input type="checkbox" name="hobby" value="Car" onChange={myChange} />
-      <label for="vehicle2"> car</label>
+      <label> car</label>
       <input type="checkbox" name="hobby" value="bike" onChange={myChange} />
-      <label for="vehicle3"> bike</label>
+      <label> bike</label>
       <p>rating:{profile.rating}</p>
       <input
         type="range"

@@ -2,11 +2,11 @@
 import ReactDOM from "react-dom/client";
 // import App from './App.jsx'
 import "./index.css";
-import FormAll from "./FunctionComp/FormAll.jsx";
+import Counter from "./FunctionComp/newCounter.jsx";
 // ReactDOM.createRoot(document.getElementById('root')).render(
 //   <React.StrictMode>
 //     <App />
 //   </React.StrictMode>,
 // )
 
-ReactDOM.createRoot(document.getElementById("root")).render(<FormAll />);
+ReactDOM.createRoot(document.getElementById("root")).render(<Counter />);
