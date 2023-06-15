@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Buttoncolorchild from "./Buttoncolorchild";
 
 const ButtoncolorParent = () => {
+  const [color, setcolor] = useState("");
+  const handleColor = (t) => {
+    setcolor(t);
+  };
   return (
     <div>
-      <button>red</button>
-      <button>blue</button>
-      <button>orange</button>
-      <Buttoncolorchild />
+      <button onClick={() => handleColor("red")}>red</button>
+      <button onClick={() => handleColor("blue")}>blue</button>
+      <button onClick={() => handleColor("orange")}>orange</button>
+      <Buttoncolorchild color={color} />
     </div>
   );
 };

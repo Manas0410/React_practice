@@ -1,8 +1,8 @@
 import React from "react";
 
-const Buttoncolorchild = () => {
+const Buttoncolorchild = (prop) => {
   return (
-    <div>
+    <div style={{ color: prop.color }}>
       <p>Hello MANAS</p>
     </div>
   );
