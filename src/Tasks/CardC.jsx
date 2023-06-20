@@ -2,13 +2,20 @@ import React from "react";
 
 const CardC = (prop) => {
   const { title, content } = prop.data;
+  console.log(title);
+  console.log(content);
   return (
     <div style={{ margin: "1px solid black" }}>
       <p>card</p>
 
       {title.map((item, index) => {
-        const t = content.filter((itemt, indext) => index == indext);
-        return <li key={indext}> {item}</li>;
+        return (
+          <li key={index}>
+            {" "}
+            {item}
+            {content[index]}{" "}
+          </li>
+        );
       })}
     </div>
   );
