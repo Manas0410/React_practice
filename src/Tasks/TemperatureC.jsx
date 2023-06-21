@@ -22,7 +22,7 @@
 // export default TemperatureC;
 
 import { useState } from "react";
-import { changeToC, changeToF } from "./utils/temperature";
+import { changeToC, changeToF } from "../utils/temperature";
 
 const TemperatureC = ({ val, ch }) => {
   const [res, setRes] = useState("");
