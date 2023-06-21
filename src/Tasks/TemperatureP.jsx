@@ -35,3 +35,9 @@ const TemperatureP = () => {
 };
 
 export default TemperatureP;
+
+// Create two components: TemperatureInput and TemperatureConverter
+// . The TemperatureInput component should have an input field where the
+// user can enter a temperature. The TemperatureConverter component should
+// display two TemperatureInput components, one for Celsius and one for Fahrenheit.
+// Implement the logic to convert the entered temperature between Celsius and Fahrenheit.

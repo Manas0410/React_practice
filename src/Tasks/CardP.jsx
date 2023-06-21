@@ -6,10 +6,7 @@ const CardP = () => {
     title: [],
     content: [],
   });
-  const [data, setData] = useState({
-    title: "",
-    content: "",
-  });
+
   const mySet = (ev) => {
     const { name, value } = ev.target;
     setElement((prevState) => {
@@ -26,10 +23,6 @@ const CardP = () => {
         <input type="text" name="title" onChange={mySet} />
         <input type="text" name="content" onChange={mySet} />
       </div>
-      {/* <div>
-        <input type="text" name="title" onChange={mySet} />
-        <input type="text" name="content" onChange={mySet} />
-      </div>
       <div>
         <input type="text" name="title" onChange={mySet} />
         <input type="text" name="content" onChange={mySet} />
@@ -37,7 +30,11 @@ const CardP = () => {
       <div>
         <input type="text" name="title" onChange={mySet} />
         <input type="text" name="content" onChange={mySet} />
-      </div> */}
+      </div>
+      <div>
+        <input type="text" name="title" onChange={mySet} />
+        <input type="text" name="content" onChange={mySet} />
+      </div>
       <CardC data={element} />
     </div>
   );
