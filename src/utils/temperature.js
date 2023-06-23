@@ -1,8 +1,9 @@
-const changeToF = (n) => {
-        setRes((parseFloat(n) * 9) / 5 + 32);
+// import TemperatureC from "../Tasks/TemperatureC";
+// import { useState } from "react";
+export const changeToF = (n) => {
+        return ((parseFloat(n) * 9) / 5 + 32);
       };
     
-        const changeToC = (n) => {
-    setRes(((parseFloat(n) - 32) * 5) / 9);
+export const changeToC = (n) => {
+    return (((parseFloat(n) - 32) * 5) / 9);
   };
-  

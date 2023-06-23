@@ -8,6 +8,8 @@ import CardP from "./Tasks/CardP";
 import ListRender from "./props3/List";
 import ListRenderAdd from "./props3/abhinavList";
 import TemperatureP from "./Tasks/TemperatureP";
+import AccordianP from "./Tasks/1.AccordianP";
+import CondInputbox from "./props4/condInputbox";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -16,7 +18,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <CardP /> */}
     {/* <ListRender /> */}
     {/* <ListRenderAdd /> */}
-    <TemperatureP />
+    {/* <TemperatureP /> */}
+    {/* <AccordianP /> */}
+    <CondInputbox />
   </React.StrictMode>
 );
 
