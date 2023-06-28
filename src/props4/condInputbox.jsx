@@ -8,8 +8,9 @@ const CondInputbox = () => {
         type="text"
         placeholder={data.length && "enter input"}
         onChange={(ev) => setData(ev.target.value)}
-        { data.length ? <p>"u hv entered nothing"</p> : <p>{data} </p>}
+        value={data}
       />
+      {data.length ? <p>u hv entered nothing</p> : <p>{data} </p>}
     </div>
   );
 };
