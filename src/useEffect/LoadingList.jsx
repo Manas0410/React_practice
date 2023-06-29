@@ -8,13 +8,34 @@ const override = {
 };
 
 const ProductList = () => {
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState("");
 
-  useEffect(() => {
+  // One way
+  /*   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((data) => data.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, []); */
+
+  // Second way
+  /*   useEffect(() => {
+    const callAPI = async () => {
+      const results = await fetch("https://fakestoreapi.com/products");
+      const parsedResult = await results.json();
+      setProducts(parsedResult);
+    };
+
+    callAPI();
+  }, []); */
+
+  // Third way
+  useEffect(() => {
+    (async () => {
+      const results = await fetch("https://fakestoreapi.com/products");
+      const parsedResult = await results.json();
+      setProducts(parsedResult);
+    })();
+  });
 
   if (!products) {
     return (

@@ -4,6 +4,7 @@ import Greetings from "./Greetigs";
 
 function Homepage() {
   const [name, setName] = useState("Rahul");
+
   return (
     <div>
       <p>Greetings</p>
@@ -15,7 +16,6 @@ function Homepage() {
         />
       </div>
       <Greetings name={name} city="Dehradun" />
-    
     </div>
   );
 }

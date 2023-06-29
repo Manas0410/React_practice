@@ -10,6 +10,8 @@ import ListRenderAdd from "./props3/abhinavList";
 import TemperatureP from "./Tasks/TemperatureP";
 import AccordianP from "./Tasks/1.AccordianP";
 import CondInputbox from "./props4/condInputbox";
+import ProductList from "./useEffect/LoadingList";
+import Axiosjson from "./axios/Axiosjson";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -20,7 +22,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <ListRenderAdd /> */}
     {/* <TemperatureP /> */}
     {/* <AccordianP /> */}
-    <CondInputbox />
+    {/* <CondInputbox /> */}
+    {/* <ProductList /> */}
+    <Axiosjson />
   </React.StrictMode>
 );
 
