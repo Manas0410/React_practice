@@ -28,6 +28,10 @@ const router = createBrowserRouter([
     path: "details/:id",
     element: <Details />,
   },
+  // {
+  //   path: "cart/:id",
+  //   element: <Cart />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
