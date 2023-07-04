@@ -18,6 +18,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Details from "./axios/Details";
 import Axiosjson from "./axios/Axiosjson";
+import CartPage from "./axios/Cart";
 
 const router = createBrowserRouter([
   {
@@ -28,10 +29,10 @@ const router = createBrowserRouter([
     path: "details/:id",
     element: <Details />,
   },
-  // {
-  //   path: "cart/:id",
-  //   element: <Cart />,
-  // },
+  {
+    path: "cart",
+    element: <CartPage />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

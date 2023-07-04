@@ -101,8 +101,13 @@ const Axiosjson = () => {
   }, []);
 
   const addToCart = (id) => {
-    setCart((prevCart) => [...prevCart, id]);
-    console.log(cart);
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart, id];
+      // Store cart data in local storage
+      localStorage.setItem("cartData", JSON.stringify(updatedCart));
+
+      return updatedCart;
+    });
   };
 
   return (
@@ -137,12 +142,15 @@ const Axiosjson = () => {
               </Pdiv>
             </Link>
 
-            <button onClick={() => addToCart(id)}>ADD TO CART</button>
+            <button onClick={() => addToCart(id)}>
+              {/* {!cartFlag ? <p> ADD TO CART</p> : <p>ADDED TO CART</p>} */}
+              {!cart.includes(id) ? <p>ADD TO CART</p> : <p>ADDED TO CART</p>}
+            </button>
           </div>
         );
       })}
       <Link to={`/cart`}>
-        <BUtton>SHOW CART</BUtton>
+        <button>SHOW CART</button>
       </Link>
     </Pdiv>
   );
