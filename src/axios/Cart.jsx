@@ -19,19 +19,12 @@ const CartPage = () => {
     <div>
       <h1>Cart Page</h1>
       {/* Render cart data */}
-      {/* {cartData && cartData.length > 0 ? (
-        <ul>
-          {cartData.map((item) => (
-            <li key={item.id}>{item.title}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>Your cart is empty.</p>
-      )} */}
-      {cartData.map((idd) => {
-        const m = cart.filter((cd) => cd.id == idd);
 
-        const { id, title, price, description, category, image } = m;
+      {cartData.map((idd) => {
+        const m = cart.filter((cd) => cd.id === idd);
+        console.log("ye", m);
+
+        const { id, title, price, description, category, image } = m[0];
         return (
           <div key={id}>
             <Pdiv>
