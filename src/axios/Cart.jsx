@@ -24,7 +24,7 @@ const CartPage = () => {
         const m = cart.filter((cd) => cd.id === idd);
         console.log("ye", m);
 
-        const { id, title, price, description, category, image } = m[0];
+        const { id, title, price, description, category, image } = m[0] || {};
         return (
           <div key={id}>
             <Pdiv>
