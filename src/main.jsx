@@ -13,28 +13,52 @@
 
 // ReactDOM.createRoot(document.getElementById("root")).render(<AbtParent />);
 
+// import ReactDOM from "react-dom/client";
+// import "./index.css";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import Details from "./axios/Details";
+// import Axiosjson from "./axios/Axiosjson";
+// import CartPage from "./axios/Cart";
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Axiosjson />,
+//   },
+//   {
+//     path: "details/:id",
+//     element: <Details />,
+//   },
+//   {
+//     path: "cart",
+//     element: <CartPage />,
+//   },
+// ]);
+
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <RouterProvider router={router} />
+// );
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Details from "./axios/Details";
-import Axiosjson from "./axios/Axiosjson";
-import CartPage from "./axios/Cart";
+import ProductListf from "./cartfromBackendApi/Homepage";
+import MyCartf from "./cartfromBackendApi/Cartpage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Axiosjson />,
+    element: <ProductListf />,
   },
   {
-    path: "details/:id",
-    element: <Details />,
-  },
-  {
-    path: "cart",
-    element: <CartPage />,
+    path: "/cart",
+    element: <MyCartf />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <>
+    <ToastContainer />
+    <RouterProvider router={router} />
+  </>
 );
