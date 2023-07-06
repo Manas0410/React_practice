@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const MyCartf = () => {
   const [cartList, setCartList] = useState([]);
@@ -14,6 +15,31 @@ const MyCartf = () => {
     if (result.data) {
       setCartList(result.data);
     }
+  };
+  const onRemoveFromCart = async (productId) => {
+    const result = await axios.delete(
+      `http://localhost:3000/cart/${productId}`
+    );
+    if (!result.data) {
+      // Show Error message
+      toast("No product removed from the cart");
+      return;
+    }
+
+    toast.success("Product removed from the cart!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
+    setCartList((prevState) => {
+      return prevState.filter((data) => data.id !== productId);
+    });
   };
 
   return (
@@ -34,7 +60,9 @@ const MyCartf = () => {
               }}
             >
               <p>{item.title}</p>
-              <button onClick={() => {}}>Remove from cart</button>
+              <button onClick={() => onRemoveFromCart(item.id)}>
+                Remove from cart
+              </button>
             </li>
           );
         })}
