@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { BounceLoader } from "react-spinners";
+// import "react-spinners/css/bounce-loader.css";
 
 const ProductListf = () => {
   const [products, setProducts] = useState([]);
   const [cartMapping, setCartMapping] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     onLoadProducts();
@@ -15,8 +18,23 @@ const ProductListf = () => {
     const result = await axios.get("http://localhost:3000/products");
     if (result.data) {
       setProducts(result.data);
+      setLoading(false);
     }
   };
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <BounceLoader color={"#325795"} size={150} />
+      </div>
+    );
+  }
 
   const onRemoveFromCart = async (productId) => {
     const result = await axios.delete(
