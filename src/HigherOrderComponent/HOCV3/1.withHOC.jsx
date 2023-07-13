@@ -11,7 +11,7 @@ const WitHOCCounter = () => {
         <p>Value: {counter}</p>
       </WrapperComp>
     </div>
-  );
+  );    
 };
 
 export default WitHOCCounter;
