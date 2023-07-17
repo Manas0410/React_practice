@@ -6,10 +6,11 @@ import "./index.css";
 import Task from "./Tasks/NinputFieldsSum/inputFParent";
 import { APIWithoutUseMemo } from "./Tasks/filterList";
 import { APIWithUseMemo } from "./useMEMO/asynccode";
+import TimerComponent from "./Task 2/TimerTask/Timer";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <APIWithUseMemo />
+    <TimerComponent />
   </React.StrictMode>
 );
 
