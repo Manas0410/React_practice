@@ -8,13 +8,13 @@ import { APIWithoutUseMemo } from "./Tasks/filterList";
 import { APIWithUseMemo } from "./useMEMO/asynccode";
 import TimerComponent from "./Task 2/TimerTask/Timer";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <TimerComponent />
-  </React.StrictMode>
-);
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <React.StrictMode>
+//     <TimerComponent />
+//   </React.StrictMode>
+// );
 
-// ReactDOM.createRoot(document.getElementById("root")).render(<AbtParent />);
+ReactDOM.createRoot(document.getElementById("root")).render(<TimerComponent />);
 
 // import ReactDOM from "react-dom/client";
 // import "./index.css";

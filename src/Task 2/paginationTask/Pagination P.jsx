@@ -14,8 +14,10 @@ const PaginationP = () => {
       .get("https://fakestoreapi.com/products")
       .then((response) => setApiData(response.data))
       .catch((error) => console.log(error));
-  }, [apiData]);
+  }, []);
   return <div></div>;
 };
 
 export default PaginationP;
+
+// https://api.instantwebtools.net/v1/passenger?page=0&size=10
