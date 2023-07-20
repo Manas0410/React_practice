@@ -7,6 +7,8 @@ import Task from "./Tasks/NinputFieldsSum/inputFParent";
 import { APIWithoutUseMemo } from "./Tasks/filterList";
 import { APIWithUseMemo } from "./useMEMO/asynccode";
 import TimerComponent from "./Task 2/TimerTask/Timer";
+import ParentD24A from "./Context API/1.example/1.ContextP";
+import Aparent from "./Context API/childToParent/Aparent";
 
 // ReactDOM.createRoot(document.getElementById("root")).render(
 //   <React.StrictMode>
@@ -14,7 +16,7 @@ import TimerComponent from "./Task 2/TimerTask/Timer";
 //   </React.StrictMode>
 // );
 
-ReactDOM.createRoot(document.getElementById("root")).render(<TimerComponent />);
+ReactDOM.createRoot(document.getElementById("root")).render(<Aparent />);
 
 // import ReactDOM from "react-dom/client";
 // import "./index.css";
