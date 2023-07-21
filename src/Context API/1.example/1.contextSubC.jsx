@@ -3,6 +3,7 @@ import { profileContext } from "./context/Context";
 
 const SubChildD24B = () => {
   const { name, city, productList } = useContext(profileContext);
+  //usecntxt to extract value passed by context provider
 
   console.log("productList: ", productList);
   return (
