@@ -1,13 +1,17 @@
-import React from "react";
-import { C2Pprovider } from "./c2pcontext/C2Pcontext";
+import React, { useContext } from "react";
+import { C2Pcontext } from "./c2pcontext/C2Pcontext";
 
 const CsubChild = () => {
+  const { name, setName } = useContext(C2Pcontext);
   return (
-    <C2Pprovider value={{ name: Manas }}>
-      <div>
-        <p>SUBCHILD C</p>
-      </div>
-    </C2Pprovider>
+    <div>
+      <p>SUBCHILD C {name}</p>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
   );
 };
 
