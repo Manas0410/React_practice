@@ -23,11 +23,12 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Tasks/navigation/Login";
 import Logout from "./Tasks/navigation/Logout";
+import ManasDynamicFields from "./Task 2/3inputBoxrender/Inputbox";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <ManasDynamicFields />,
   },
   {
     path: "/logout",
