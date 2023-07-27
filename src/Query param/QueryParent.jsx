@@ -1,9 +1,21 @@
 import axios from "axios";
+import { useSearchParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 const QueryParent = () => {
   const [data, setData] = useState([]);
   const [catg, setCatg] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Function to update query parameters
+  const updateQueryParam = (paramKey, paramValue) => {
+    // Update the query parameter in the searchParams object
+    searchParams.set(paramKey, paramValue);
+
+    // Update the URL without reloading the page
+    setSearchParams(searchParams);
+  };
+
   useEffect(() => {
     axios.get("https://dummyjson.com/products").then((result) => {
       if (catg === "") {
@@ -19,6 +31,8 @@ const QueryParent = () => {
 
   const category = (e) => {
     setCatg(e.target.value);
+    const { value } = e.target;
+    updateQueryParam("param2", value);
   };
   console.log(catg);
   return (
@@ -109,3 +123,30 @@ const categoryStyle = {
 };
 
 export default QueryParent;
+
+// import { useSearchParams } from "react-router-dom";
+
+// export default function QueryParams() {
+//   const [searchParams, setSearchParams] = useSearchParams();
+
+//   // Function to update query parameters
+//   const updateQueryParam = (paramKey, paramValue) => {
+//     // Update the query parameter in the searchParams object
+//     searchParams.set(paramKey, paramValue);
+
+//     // Update the URL without reloading the page
+//     setSearchParams(searchParams);
+//   };
+
+//   // Example usage: updating 'param2' to 'newvalue'
+//   const handleUpdateQueryParam = () => {
+//     updateQueryParam("param2", "newvalue");
+//   };
+
+//   return (
+//     <div>
+//       {/* Your component content */}
+//       <button onClick={handleUpdateQueryParam}>Update Query Param</button>
+//     </div>
+//   );
+// }
