@@ -24,15 +24,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Tasks/navigation/Login";
 import Logout from "./Tasks/navigation/Logout";
 import ManasDynamicFields from "./Task 2/3inputBoxrender/Inputbox";
+import { APIWithoutUseMemo } from "./Tasks/filterList";
+import QueryParent from "./Query param/QueryParent";
+import ProductDeatilsAssignment from "./Query param/QuerparamExample";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ManasDynamicFields />,
+    element: <QueryParent />,
   },
   {
-    path: "/logout",
-    element: <Logout />,
+    path: "/product/:id",
+    element: <ProductDeatilsAssignment />,
   },
 ]);
 
