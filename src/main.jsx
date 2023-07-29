@@ -21,21 +21,18 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./Tasks/navigation/Login";
-import Logout from "./Tasks/navigation/Logout";
-import ManasDynamicFields from "./Task 2/3inputBoxrender/Inputbox";
-import { APIWithoutUseMemo } from "./Tasks/filterList";
-import QueryParent from "./Query param/QueryParent";
-import ProductDeatilsAssignment from "./Query param/QuerparamExample";
+
+import Details from "./Task 2/ListToDetailwithoutRefresh/ListDetail";
+import Data from "./Task 2/ListToDetailwithoutRefresh/Data";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <QueryParent />,
+    element: <Data />,
   },
   {
-    path: "/product/:id",
-    element: <ProductDeatilsAssignment />,
+    path: "/products/:id",
+    element: <Details />,
   },
 ]);
 
