@@ -2,14 +2,12 @@ import React from "react";
 import { useContext } from "react";
 
 import { Link } from "react-router-dom";
-import { profileContext } from "./ListContext";
+import ProfileContext from "./ListContext";
 
-const ListP = () => {
-  const { productList } = useContext(profileContext);
-
+const ListP = ({ products }) => {
   return (
     <div>
-      {productList.map((data) => {
+      {products.map((data) => {
         console.log(data.id);
         return (
           <div key={data.id}>

@@ -24,11 +24,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Details from "./Task 2/ListToDetailwithoutRefresh/ListDetail";
 import Data from "./Task 2/ListToDetailwithoutRefresh/Data";
+import DataParent from "./Task 2/ListToDetailwithoutRefresh/DataParent";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Data />,
+    element: <DataParent />,
   },
   {
     path: "/products/:id",
