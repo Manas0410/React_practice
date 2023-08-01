@@ -23,13 +23,14 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Details from "./Task 2/ListToDetailwithoutRefresh/ListDetail";
-import Data from "./Task 2/ListToDetailwithoutRefresh/Data";
-import DataParent from "./Task 2/ListToDetailwithoutRefresh/DataParent";
+
+import OTP from "./useRef/1.example/OTP";
+import ManasDynamicFields from "./Task 2/3inputBoxrender/Inputbox";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DataParent />,
+    element: <OTP />,
   },
   {
     path: "/products/:id",
