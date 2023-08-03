@@ -4,11 +4,22 @@ const OTP = () => {
   const otpRef = useRef([]);
   const fields = [];
   let res = [];
-  const inputChangeRef = (id) => {
-    otpRef.current[id + 1]?.focus();
-    console.log("val", otpRef.current[id].value);
-    res.push(otpRef.current[id]);
-    console.log("otpref", otpRef);
+  const inputChangeRef = (id, e) => {
+    // if (e.keyCode === 8) {
+    //   otpRef.current[id - 1]?.focus();
+
+    //   console.log("Backspace key pressed!");
+    //   // Your custom logic when backspace key is pressed
+    // }
+    if (otpRef.current[id].length === 0) {
+      otpRef.current[id - 1]?.focus();
+    } else {
+      otpRef.current[id + 1]?.focus();
+      // console.log("val", otpRef.current[id].value);
+      res.push(otpRef.current[id]);
+      // console.log("otpref", otpRef);
+    }
+    // otpRef.current[id + 1]?.focus();
   };
   for (let i = 0; i < 4; i++) {
     fields.push(
@@ -21,7 +32,7 @@ const OTP = () => {
           return (otpRef.current[i] = en);
         }}
         maxLength={1}
-        onChange={(e) => inputChangeRef(i)}
+        onChange={(e) => inputChangeRef(i, e)}
       />
     );
   }

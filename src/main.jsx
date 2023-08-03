@@ -26,11 +26,15 @@ import Details from "./Task 2/ListToDetailwithoutRefresh/ListDetail";
 
 import OTP from "./useRef/1.example/OTP";
 import ManasDynamicFields from "./Task 2/3inputBoxrender/Inputbox";
+import DrawingApp from "./useRef/drawing/Drawing";
+import OTPTask from "./useRef/1.example/OTP2";
+import StudyP from "./StudyPlanTask/StudyP";
+import Circle from "./StudyPlanTask/Circle";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <OTP />,
+    element: <Circle />,
   },
   {
     path: "/products/:id",
