@@ -30,11 +30,14 @@ import DrawingApp from "./useRef/drawing/Drawing";
 import OTPTask from "./useRef/1.example/OTP2";
 import StudyP from "./StudyPlanTask/StudyP";
 import Circle from "./StudyPlanTask/Circle";
+import { store } from "./Redux Folder/Store";
+import { Provider } from "react-redux";
+import { Counter } from "./Redux Folder/CounterComp";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Circle />,
+    element: <Counter />,
   },
   {
     path: "/products/:id",
@@ -43,7 +46,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );
 
 // import ReactDOM from "react-dom/client";
