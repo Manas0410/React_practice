@@ -30,14 +30,15 @@ import DrawingApp from "./useRef/drawing/Drawing";
 import OTPTask from "./useRef/1.example/OTP2";
 import StudyP from "./StudyPlanTask/StudyP";
 import Circle from "./StudyPlanTask/Circle";
-import { store } from "./Redux Folder/Store";
+import { store } from "./Redux Folder/CalculatorByRedux/StoreCalc";
 import { Provider } from "react-redux";
 import { Counter } from "./Redux Folder/CounterComp";
+import CalcComp from "./Redux Folder/CalculatorByRedux/CalcComp";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Counter />,
+    element: <CalcComp />,
   },
   {
     path: "/products/:id",
