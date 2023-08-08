@@ -62,3 +62,6 @@ const uls = {
 };
 
 export default InfiniteScrollP;
+
+//(entries[0].isIntersecting) is checking whether the observed element
+//(which is likely the bottom of the content) is currently visible in the viewport
