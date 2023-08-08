@@ -14,10 +14,6 @@ const ProductListP = () => {
   }, []);
 
   const product = useSelector((state) => state.storeSlice.product);
-  const cartt = useSelector((state) => state.storeSlice.cart);
-  console.log(cartt);
-  console.log(product);
-
   return (
     <div>
       <Link to={`/cart`}>
@@ -28,7 +24,7 @@ const ProductListP = () => {
           return (
             <li key={item.id}>
               {item.title}
-              <button onClick={() => dispatch(storeCart(item.id))}>
+              <button onClick={() => dispatch(storeCart(item))}>
                 ADD TO CART
               </button>
             </li>

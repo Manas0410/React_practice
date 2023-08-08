@@ -18,3 +18,6 @@ export default Parent;
 //2-wrap the child comp with suspense
 //3- in suspense with  fallback we can give whhat we want to show while loading
 //prefetch preload pfreconnect async deffer
+//particular route /// intersection observer
+
+//window ka inner hieght +scroll top >= Element.scrollheight =>call api
