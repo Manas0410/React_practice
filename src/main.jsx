@@ -24,25 +24,21 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Details from "./Task 2/ListToDetailwithoutRefresh/ListDetail";
 
-import OTP from "./useRef/1.example/OTP";
-import ManasDynamicFields from "./Task 2/3inputBoxrender/Inputbox";
-import DrawingApp from "./useRef/drawing/Drawing";
-import OTPTask from "./useRef/1.example/OTP2";
-import StudyP from "./StudyPlanTask/StudyP";
-import Circle from "./StudyPlanTask/Circle";
-import { store } from "./Redux Folder/CalculatorByRedux/StoreCalc";
+import { store } from "./Redux Folder/ProductCart/ProductStore";
 import { Provider } from "react-redux";
-import { Counter } from "./Redux Folder/CounterComp";
-import CalcComp from "./Redux Folder/CalculatorByRedux/CalcComp";
+
+import Parent from "./LazyLoadingEx/Parent";
+import ProductListP from "./Redux Folder/ProductCart/ProductListP";
+import Cart from "./Redux Folder/ProductCart/Cart";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <CalcComp />,
+    element: <Parent />,
   },
   {
-    path: "/products/:id",
-    element: <Details />,
+    path: "/cart",
+    element: <Cart />,
   },
 ]);
 
