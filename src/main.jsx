@@ -31,11 +31,12 @@ import Parent from "./LazyLoadingEx/Parent";
 import ProductListP from "./Redux Folder/ProductCart/ProductListP";
 import Cart from "./Redux Folder/ProductCart/Cart";
 import Infinite from "./infinteScroll/Test1";
+import InfiniteScrollP from "./infinteScroll/InfiniteScrollP";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Infinite />,
+    element: <InfiniteScrollP />,
   },
   {
     path: "/cart",
