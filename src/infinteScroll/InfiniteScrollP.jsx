@@ -4,27 +4,29 @@ import React, { useEffect, useRef, useState } from "react";
 const InfiniteScrollP = () => {
   const bottom = useRef(null);
   const [apiData, setApiData] = useState([]);
-  useEffect(() => {
+  const [page, setPage] = useState(1); //to set the page to next
+  const callApi = () => {
     axios
-      .get(
-        "https://jsonplaceholder.typicode.com/posts?limit=9&_page=$%7Bpage%7D"
-      )
-      .then((response) => setApiData(response.data));
-  }, []);
+      .get(`https://jsonplaceholder.typicode.com/posts?limit=9&_page=${page}`)
+      .then((response) => {
+        setApiData((prev) => [...prev, ...response.data]);
+        // setPage((prevPage) => prevPage + 1);
+      });
+  };
+  useEffect(() => {
+    callApi();
+  }, [page]);
+  console.log(page);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        axios
-          .get(
-            "https://jsonplaceholder.typicode.com/posts?limit=9&_page=$%7Bpage%7D"
-          )
-          .then((response) =>
-            setApiData((prev) => [...prev, ...response.data])
-          );
+        // callApi();
+        setPage((prevPage) => prevPage + 1);
       }
     });
     observer.observe(bottom.current);
   }, []);
+  console.log(page);
 
   return (
     <div>
