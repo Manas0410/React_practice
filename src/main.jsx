@@ -32,22 +32,30 @@ import ProductListP from "./Redux Folder/ProductCart/ProductListP";
 import Cart from "./Redux Folder/ProductCart/Cart";
 import Infinite from "./infinteScroll/Test1";
 import InfiniteScrollP from "./infinteScroll/InfiniteScrollP";
+import TryComp from "./myHooks/TryComp";
+import Mparent from "./Task 2/memoizingApiData/Mparent";
+import { Mhoc } from "./Task 2/memoizingApiData/Mhoc";
+import Mchild from "./Task 2/memoizingApiData/Mchild";
+import SearchingP from "./Task 2/Searching/SearchingP";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <InfiniteScrollP />,
+    element: <SearchingP />,
   },
   {
-    path: "/cart",
-    element: <Cart />,
+    path: "/:id",
+    element: <Mchild />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
+  // <Provider store={store}>
+  //   <RouterProvider router={router} />
+  // </Provider>
+  <Mhoc>
     <RouterProvider router={router} />
-  </Provider>
+  </Mhoc>
 );
 
 // import ReactDOM from "react-dom/client";

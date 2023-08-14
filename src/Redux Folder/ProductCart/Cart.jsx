@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addQuantity, minusQuantity } from "./ProductSlice";
+import { addQuantity, minusQuantity, removeItem } from "./ProductSlice";
 const Cart = () => {
   const cartt = useSelector((state) => state.storeSlice.cart);
   console.log(cartt);
@@ -9,10 +9,16 @@ const Cart = () => {
 
   const totalPrice = useMemo(() => {
     let values = 0;
-    cartt.map((items) => (values += items.price));
-    return values;
+    cartt.map((items) => {
+      const { quantity = 1, price } = items;
+      values += price * quantity;
+    });
+    return values.toFixed(2);
   }, [cartt]);
-
+  //   values += items.hasOwnProperty(quantity)
+  //   ? items.price * items[quantity]
+  //   : items.price;
+  // return values;
   return (
     <div>
       <Link to={`/`}>
@@ -28,6 +34,7 @@ const Cart = () => {
               <button onClick={() => dispatch(addQuantity(item))}>+</button>{" "}
               {item.quantity}{" "}
               <button onClick={() => dispatch(minusQuantity(item))}>-</button>
+              <button onClick={() => dispatch(removeItem(item.id))}>✂</button>
             </p>
             <p>price:{item.price} </p>
           </li>
