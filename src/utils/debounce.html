@@ -17,7 +17,7 @@
   const deb = (fn, d) => {
     let timer;
     return function () {
-      clearTimeout(timer);
+      clearTimeout(timer); 
       timer = setTimeout(() => {
         fn();
       }, d);
