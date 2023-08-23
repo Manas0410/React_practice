@@ -33,7 +33,6 @@ const m = p.reduce((ac, val) => {
   let temp = { ...val };
   temp.isActive = val.isActive ? "available" : "unavailable";
   ac.push(temp)
-  // ac = [...ac,temp]
   return ac;
 }, []);
 console.log(m);

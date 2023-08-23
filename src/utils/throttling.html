@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="butn">CLICK ME</button>
+  </body>
+</html>
+<script>
+  let flag = true;
+  counter = 1;
+  const throtl = () => {
+    if (flag) {
+      console.log("clicked btn", counter++);
+      flag = false;
+      setTimeout(() => {
+        flag = true;
+        //button.disabled=false
+      }, 2000);
+    }
+  };
+
+  //button.disabled=true
+
+  const button = document.getElementById("butn");
+  button.addEventListener("click", throtl);
+</script>
+<!-- //create flag initially true call api then set to false  then timeout to-->

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import axios from "axios";
+import Manas from "./MANAS";
 
 const SearchingP = () => {
   const [data, setData] = useState([]);
@@ -26,9 +27,10 @@ const SearchingP = () => {
     }
     return data.filter((item) => match(item.title, input));
   }, [input, data]);
-  console.log({ search });
   return (
+    <Manas>
     <div>
+      {/* {{}} */}
       <input
         type="text"
         onChange={(e) => {
@@ -39,7 +41,10 @@ const SearchingP = () => {
         return <div key={item.id}>{item.title}</div>;
       })}
     </div>
+    </Manas>
   );
 };
 
-export default SearchingP;
+export default SearchingP ;
+
+// when we need to filter logic is on backend we hv to send input to backend and backend sends the filtered result

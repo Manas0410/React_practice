@@ -27,25 +27,21 @@ import Details from "./Task 2/ListToDetailwithoutRefresh/ListDetail";
 import { store } from "./Redux Folder/ProductCart/ProductStore";
 import { Provider } from "react-redux";
 
-import Parent from "./LazyLoadingEx/Parent";
-import ProductListP from "./Redux Folder/ProductCart/ProductListP";
-import Cart from "./Redux Folder/ProductCart/Cart";
-import Infinite from "./infinteScroll/Test1";
-import InfiniteScrollP from "./infinteScroll/InfiniteScrollP";
-import TryComp from "./myHooks/TryComp";
-import Mparent from "./Task 2/memoizingApiData/Mparent";
 import { Mhoc } from "./Task 2/memoizingApiData/Mhoc";
 import Mchild from "./Task 2/memoizingApiData/Mchild";
-import SearchingP from "./Task 2/Searching/SearchingP";
+
+import LifeCycle from "./Forwardref/LifeCycle";
+import BookHomeP from "./BookApp/BookHomeP";
+import SearchBar from "./BookApp/SearchBar";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SearchingP />,
+    element: <BookHomeP />,
   },
   {
     path: "/:id",
-    element: <Mchild />,
+    element: <SearchBar />,
   },
 ]);
 
@@ -81,4 +77,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //     <ToastContainer />
 //     <RouterProvider router={router} />
 //   </>
-// );
+// );232
