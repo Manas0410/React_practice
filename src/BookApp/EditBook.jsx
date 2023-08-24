@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 
@@ -81,6 +82,7 @@ const EditBook = ({ item, editFlag }) => {
         placeholder="year"
       />
       <button onClick={update}>UPDATE</button>
+      <button onClick={() => editFlag(false)}>❌</button>
     </div>
   );
 };
