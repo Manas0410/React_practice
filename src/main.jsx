@@ -33,11 +33,13 @@ import Mchild from "./Task 2/memoizingApiData/Mchild";
 import LifeCycle from "./Forwardref/LifeCycle";
 import BookHomeP from "./BookApp/BookHomeP";
 import SearchBar from "./BookApp/SearchBar";
+import No1to10Task from "./Task 2/No1to10Task";
+import ChatBox from "./Task 2/throttling/ChatBox";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <BookHomeP />,
+    element: <No1to10Task />,
   },
   {
     path: "/:id",

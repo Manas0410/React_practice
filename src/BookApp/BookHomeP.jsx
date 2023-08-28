@@ -27,12 +27,30 @@ const BookHomeP = () => {
       });
   }, [page, search, sort]);
   console.log(data);
+  //debounce function for search input field
+  const debounce = (callback, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        callback(...args);
+      }, delay);
+    };
+  };
+  const debouncedHandleChange = debounce((value) => {
+    setSearch(value);
+  }, 1000);
+  const handleInputChange = (e) => {
+    const newValue = e.target.value;
+    debouncedHandleChange(newValue);
+  };
+  /////////////////////////
   return (
     <div>
       <div>
         <input
           type="text"
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => handleInputChange(e)}
           placeholder="🔍 Search by title"
         />
       </div>

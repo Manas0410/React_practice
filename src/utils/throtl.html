@@ -6,26 +6,23 @@
     <title>Document</title>
   </head>
   <body>
-    <button id="butn">CLICK ME</button>
+    <button id="th">click</button>
   </body>
 </html>
 <script>
   let flag = true;
-  counter = 1;
+  count = 1;
   const throtl = () => {
     if (flag) {
-      console.log("clicked btn", counter++);
+      console.log("call api", count++); // when flag is true
       flag = false;
       setTimeout(() => {
         flag = true;
       }, 2000);
     }
   };
-
-  //button.disabled=true
-
-  const button = document.getElementById("butn");
-  button.addEventListener("click", throtl);
+  document.getElementById("th").addEventListener("click", throtl);
 </script>
-<!-- //create flag initially true call api then set to false  then timeout to-->
-<!-- pagination in  second row -->
+<!-- //chat application input + button
+typed data should display 2 button both mode
+apply throttl -->
