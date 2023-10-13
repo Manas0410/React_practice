@@ -24,7 +24,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Details from "./Task 2/ListToDetailwithoutRefresh/ListDetail";
 
-import { store } from "./Redux Folder/ProductCart/ProductStore";
 import { Provider } from "react-redux";
 
 import { Mhoc } from "./Task 2/memoizingApiData/Mhoc";
@@ -35,25 +34,38 @@ import BookHomeP from "./BookApp/BookHomeP";
 import SearchBar from "./BookApp/SearchBar";
 import No1to10Task from "./Task 2/No1to10Task";
 import ChatBox from "./Task 2/throttling/ChatBox";
+import TodoP from "./intvw/todoP";
+import { store } from "./Redux Folder/Store";
+import CalcBySaga from "./ReduxSaga/calculatorbySaga/calculator.layout";
+import Movies from "./ReduxSaga/Movies/movies.layout";
+import { LoopsBest, LoopsGood } from "./useMEMO/1.example";
+import MemoP from "./Memo/1.parent";
+import UseCallbackV22 from "./useCallBack/mainExample";
+import UcbParent from "./useCallBack/AnotherExample/UcbParent";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <No1to10Task />,
+    element: (
+      <div>
+        <CalcBySaga />
+        <Movies />
+      </div>
+    ),
   },
   {
-    path: "/:id",
-    element: <SearchBar />,
+    path: "/test",
+    element: <UcbParent />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <Provider store={store}>
-  //   <RouterProvider router={router} />
-  // </Provider>
-  <Mhoc>
+  <Provider store={store}>
     <RouterProvider router={router} />
-  </Mhoc>
+  </Provider>
+  // <Mhoc>
+  //   <RouterProvider router={router} />
+  // </Mhoc>
 );
 
 // import ReactDOM from "react-dom/client";

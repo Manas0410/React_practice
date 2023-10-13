@@ -8,5 +8,5 @@ const Child = ({ count = 999 }) => {
   return <p>I am a child: {count}</p>;
 };
 
-const ChildComponent = memo(Child);
-export default ChildComponent;
+// export default memo(Child);
+export default Child;

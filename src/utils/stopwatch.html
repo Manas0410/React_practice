@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><span>MINUTES:</span><span id="min"></span></div>
+    <div><span>SECONDS</span><span id="sec"></span></div>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+    <button onclick="reset()">reset</button>
+  </body>
+</html>
+<script>
+  let time = 0;
+  let timer;
+  const start = () => {
+    if (timer) {
+      clearInterval(timer);
+    }
+    timer = setInterval(() => {
+      time += 1;
+      console.log(Math.floor(time / 60), "minute and", time % 60, "seconds");
+      document.getElementById("min").innerHTML = Math.floor(time / 60);
+      document.getElementById("sec").innerHTML = time % 60;
+    }, 1000);
+  };
+  const stop = () => {
+    clearInterval(timer);
+    console.log(time);
+  };
+  const reset = () => {
+    time = 0;
+    document.getElementById("min").innerHTML = Math.floor(time / 60);
+    document.getElementById("sec").innerHTML = time % 60;
+  };
+</script>

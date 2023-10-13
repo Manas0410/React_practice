@@ -1,9 +1,9 @@
 // Parent
 
 import { useState } from "react";
-import Child from "./Child";
+import Child from "./1.Child";
 
-const Parent = () => {
+const MemoP = () => {
   const [counter, setCounter] = useState(0);
 
   console.log("Parent Re-render");
@@ -26,3 +26,4 @@ const Parent = () => {
     </div>
   );
 };
+export default MemoP;
