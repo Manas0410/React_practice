@@ -42,14 +42,14 @@ import { LoopsBest, LoopsGood } from "./useMEMO/1.example";
 import MemoP from "./Memo/1.parent";
 import UseCallbackV22 from "./useCallBack/mainExample";
 import UcbParent from "./useCallBack/AnotherExample/UcbParent";
+import ParentV22 from "./useCallBack/1.exampleP";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
-        <CalcBySaga />
-        <Movies />
+        <ParentV22 />
       </div>
     ),
   },
