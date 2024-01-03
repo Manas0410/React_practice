@@ -1,34 +1,28 @@
-import { useState } from "react";
-import Greetings from "./Greetigs";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-// import GreetingsV2 from "./GreetingsV2";
-
-function Homepage() {
-  const [name, setName] = useState("Rahul");
-
+const App = () => {
+  const [state, setState] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => setState(response.data));
+  }, []);
+  console.log(state);
   return (
-    <Router>
-      {/* <div>
-        <p>Greetings</p>
-        <div>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <Greetings name={name} city="Dehradun" />
-      </div> */}
-      <Switch>
-        <Route exact path="/" />
-        <Route />
-        <Route />
-        <Route />
-        <Route />
-      </Switch>
-    </Router>
+    <div>
+      {state.map((item) => {
+        if (item.userId == 1) {
+          return;
+        }
+        return (
+          <div key={item.id}>
+            <span>{item.userId}</span>
+            <span>{item.title}</span>
+          </div>
+        );
+      })}
+    </div>
   );
-}
-
-export default Homepage;
+};
+export default App;

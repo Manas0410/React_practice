@@ -43,13 +43,14 @@ import MemoP from "./Memo/1.parent";
 import UseCallbackV22 from "./useCallBack/mainExample";
 import UcbParent from "./useCallBack/AnotherExample/UcbParent";
 import ParentV22 from "./useCallBack/1.exampleP";
+import App from "./App";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
-        <ParentV22 />
+        <App />
       </div>
     ),
   },
@@ -93,5 +94,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //   </>
 // );232
 // comit
-
-
