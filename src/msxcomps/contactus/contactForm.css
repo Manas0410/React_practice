@@ -1,0 +1,45 @@
+
+/* contactForm.css */
+
+.contact-inputs {
+    display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-textArea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submitbutton {
+    background-color: #ff9966;;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submitbutton:hover {
+    background-color: #45a049;
+}
+
+/* Add more styles as needed */

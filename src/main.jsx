@@ -44,13 +44,14 @@ import UseCallbackV22 from "./useCallBack/mainExample";
 import UcbParent from "./useCallBack/AnotherExample/UcbParent";
 import ParentV22 from "./useCallBack/1.exampleP";
 import App from "./App";
+import ContactForm from "./msxcomps/contactus/ContactForm";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
-        <App />
+        <ContactForm />
       </div>
     ),
   },
